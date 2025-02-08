@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { TextInput, Button, StyleSheet, Text, View } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+
 export default function ComparisonScreen() {
   const [num1, setNum1] = useState('');
   const [num2, setNum2] = useState('');
   const [result, setResult] = useState('');
+
   const compareNumbers = () => {
     setResult(Number(num1) >= Number(num2) ? 'Mayor o igual' : 'Menor');
   };
+
   return (
     <View style={styles.container}>
       <Text>Ingrese dos números:</Text>

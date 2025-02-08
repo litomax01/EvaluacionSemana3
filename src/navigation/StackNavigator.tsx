@@ -7,11 +7,11 @@ import ComparisonScreen2 from '../screens/ComparisonScreen2';
 import { SCREENS } from './routes';
 
 type RootStackParamList = {
-  [SCREENS.HOME]: undefined;
-  [SCREENS.IMAGE1]: undefined;
-  [SCREENS.IMAGE2]: undefined;
-  [SCREENS.COMPARISON1]: undefined;
-  [SCREENS.COMPARISON2]: undefined;
+  Home: undefined;
+  Image1: undefined;
+  Image2: undefined;
+  Comparison1: undefined;
+  Comparison2: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
