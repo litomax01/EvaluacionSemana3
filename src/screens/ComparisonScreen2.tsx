@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import CustomButton from '../components/CustomButton';
+import { globalStyles } from '../styles/globalStyles';
 
 const ComparisonScreen2 = () => {
   const [num1, setNum1] = useState('');
@@ -12,11 +13,11 @@ const ComparisonScreen2 = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <TextInput style={styles.input} placeholder="Número 1" keyboardType="numeric" onChangeText={setNum1} />
-      <TextInput style={styles.input} placeholder="Número 2" keyboardType="numeric" onChangeText={setNum2} />
+    <View style={globalStyles.container}>
+      <TextInput style={globalStyles.input} placeholder="Número 1" keyboardType="numeric" onChangeText={setNum1} />
+      <TextInput style={globalStyles.input} placeholder="Número 2" keyboardType="numeric" onChangeText={setNum2} />
       <CustomButton title="≤" onPress={compareNumbers} />
-      <Text style={styles.result}>{result}</Text>
+      <Text style={globalStyles.result}>{result}</Text>
     </View>
   );
 };

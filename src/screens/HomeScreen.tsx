@@ -1,50 +1,33 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { globalStyles } from '../styles/globalStyles';
+import { SCREENS } from '../navigation/routes';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+type NavigationProps = NativeStackNavigationProp<any>;
 
 export default function HomeScreen() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProps>();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>BIENVENIDO</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Image1')}>
-        <Text style={styles.buttonText}>Imagen 1</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.heading}>BIENVENIDO</Text>
+
+      <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate(SCREENS.IMAGE1)}>
+        <Text style={globalStyles.buttonText}>Imagen 1</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Image2')}>
-        <Text style={styles.buttonText}>Imagen 2</Text>
+
+      <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate(SCREENS.IMAGE2)}>
+        <Text style={globalStyles.buttonText}>Imagen 2</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Comparison1')}>
-        <Text style={styles.buttonText}>{'>='}</Text>
+
+      <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate(SCREENS.COMPARISON1)}>
+        <Text style={globalStyles.buttonText}>{'>='}</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Comparison2')}>
-        <Text style={styles.buttonText}>{'<='}</Text>
+
+      <TouchableOpacity style={globalStyles.button} onPress={() => navigation.navigate(SCREENS.COMPARISON2)}>
+        <Text style={globalStyles.buttonText}>{'<='}</Text>
       </TouchableOpacity>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: '#007BFF',
-    padding: 15,
-    marginVertical: 10,
-    width: '60%',
-    alignItems: 'center',
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-  },
-});

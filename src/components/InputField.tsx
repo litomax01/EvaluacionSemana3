@@ -1,5 +1,6 @@
 import React from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import { TextInput } from 'react-native';
+import { globalStyles } from '../styles/globalStyles';
 
 interface InputProps {
   placeholder: string;
@@ -8,17 +9,15 @@ interface InputProps {
 }
 
 const InputField: React.FC<InputProps> = ({ placeholder, value, onChangeText }) => {
-  return <TextInput style={styles.input} placeholder={placeholder} value={value} onChangeText={onChangeText} keyboardType="numeric" />;
+  return (
+    <TextInput
+      style={globalStyles.input}
+      placeholder={placeholder}
+      value={value}
+      onChangeText={onChangeText}
+      keyboardType="numeric"
+    />
+  );
 };
-
-const styles = StyleSheet.create({
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    borderRadius: 5,
-    marginVertical: 10,
-  },
-});
 
 export default InputField;
